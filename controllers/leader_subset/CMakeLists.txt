@@ -1,0 +1,5 @@
+add_library(leader_subset SHARED leader_subset.h leader_subset.cpp)
+target_link_libraries(leader_subset
+  argos3core_simulator
+  argos3plugin_simulator_footbot
+  argos3plugin_simulator_genericrobot)
