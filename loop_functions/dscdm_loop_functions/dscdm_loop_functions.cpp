@@ -108,14 +108,14 @@ void CCDMLoopFunctions::PreStep() {
 
       /* Initialize opinions at the first step */
       if (GetSpace().GetSimulationClock() == 1) {
-         if (nr % 2 == 0) { cController.SetOpinionF(); }
+         if (nr % 2 == 0) { cController.SetOpinionWhite(); }
          nr++;
       }
 
       /* Count decision-making robots and those with a white opinion */
-      if (cController.IsPredictorRobot()) {
+      if (cController.IsDMRobot()) {
          ++nDM;
-         if (cController.IsFeasible()) ++nWhite;
+         if (cController.IsOpinionWhite()) ++nWhite;
       }
    }
 
